@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.button {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 350px;
+    height: 150px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.announcement {
+    background-color: rgb(146, 202, 162);
+}
+
+.members {
+    background-color: rgb(144, 144, 216);
+}
+
+.addmember {
+    background-color: rgb(188, 216, 144);
+}
+
+.make {
+    background-color: rgb(146, 202, 162);
+}
+
+.show {
+    background-color: rgb(17, 17, 72);
+}

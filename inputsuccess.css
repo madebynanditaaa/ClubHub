@@ -1,0 +1,12 @@
+body{
+    
+.form-success
+{
+    padding: 10px;
+    background-color: #4ecc5f;
+    color: #000000;
+    border: 1px solid #4ecc5f;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+}

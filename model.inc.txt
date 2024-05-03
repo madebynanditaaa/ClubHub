@@ -1,0 +1,34 @@
+function check_duplicate_member(object $pdo, string $username, string $position)// check if user is already a part of that club
+{
+    $query = "SELECT COUNT(c.user_id) as co FROM clubmembers c JOIN users u on u.user_id = c.user_id where u.username = :username and c.position = :position;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':position', $position);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['count'] > 0;
+    //if count is 0 means no user found. //and it returns false
+    //if count is 1 means user is found. //it returns true
+}
+
+//contr
+function member_already_added(object $pdo,string $username, string $position)
+{
+    if(check_duplicate_member($pdo, $username, $position))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+//inc.php
+
+        if(member_already_added($pdo, $username, $position))//checks if member is already a part of that club.
+        {
+            echo "hello i am in inc.php 28";
+            $errors['username_already_added'] = "A member with the specified user ID and club ID already exists.";
+        }

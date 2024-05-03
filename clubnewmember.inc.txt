@@ -1,0 +1,73 @@
+<?php
+//session_start(); 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve data from POST request
+    $username = $_POST["username"];
+    $position = $_POST["position"];
+    $errors = [];
+    try {
+        require_once 'dbh.inc.php';
+        require_once 'checknewmember_model.inc.php';
+        require_once 'checknewmember_contr.inc.php';
+        // Validate inputs
+        if (is_input_empty($username, $position)) {
+            $errors['empty_input'] = "Fill in all fields!";
+        }
+        
+        // Checking for invalid positions
+        $allowed_positions = ['Head', 'Co-head', 'Member'];
+        if (!in_array($position, $allowed_positions))
+        {
+            $errors['invalid_position'] = "Invalid position value!";
+        }
+        
+        if(member_already_added($pdo, $username, $position))//checks if member is already a part of that club.
+        {
+            $errors['username_already_added'] = "A member with the specified user ID and club ID already exists.";
+        }
+
+        if(invalid_username($pdo,$username))// checks if such a username exists or not.
+        {
+            $errors['invalid_username'] = "Invalid Username. Please input correct username.";
+        }
+
+        require_once 'config_session.inc.php';
+        if(empty($errors))
+        {
+        process_user_data($pdo, $username, $position);//inserts data into clubmembers.
+        header("Location: ../addmember.php?newmember=success");
+        $success_message = "New member added successfully!"; 
+        $pdo = null;
+        $stmt = null;
+        die();
+        }   
+        else{ 
+            $_SESSION["errors_addmember"] = $errors;
+            header("Location: ../addmember.php");
+            exit;
+        }
+    }        
+    catch (PDOException $e) {
+        echo "hello i am in .inc";
+        echo "<br>";
+        $_SESSION['errors_failed'] = ["Query failed: " . htmlspecialchars($e->getMessage())];
+        header("Location: ../addmember.php");            
+    
+    }
+} 
+else {
+    echo "hello i am in .inc";
+    header("Location: ../dashboard.php");
+    exit;
+}
+
+
+/*
+ if ($e->getCode() === '23000')
+        {
+            //echo "Duplicate entry detected. <br> User already a part of club";
+            $_SESSION['errors_duplicate'] = ["A member with the specified user ID and club ID already exists."];
+        }
+            else
+            {
+*/
