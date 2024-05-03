@@ -1,5 +1,5 @@
-
 ClubHub
+
 Welcome to ClubHub! This application is your comprehensive platform for managing and interacting with various clubs and their activities. ClubHub serves as a central hub for club leaders, members, and organizers, streamlining club operations, enhancing communication, and fostering a vibrant community.
 
 Features
