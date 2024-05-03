@@ -5,33 +5,33 @@ Welcome to ClubHub! This application is your comprehensive platform for managing
 
 Features
 
-Announcements: Post and view announcements about upcoming events, meetings, and important news. Keep your club members informed and engaged.
+*Announcements: Post and view announcements about upcoming events, meetings, and important news. Keep your club members informed and engaged.
 
-Membership Management: Add new members to clubs, manage existing memberships, and keep track of club rosters.
+*Membership Management: Add new members to clubs, manage existing memberships, and keep track of club rosters.
 
-Event Scheduling: Schedule and manage club events within the application. Plan meetings, activities, and gatherings, and keep track of event details.
+*Event Scheduling: Schedule and manage club events within the application. Plan meetings, activities, and gatherings, and keep track of event details.
 
-User Interaction: Engage with club members and encourage collaboration and community building.
+*User Interaction: Engage with club members and encourage collaboration and community building.
 
-Streamlined Interface: Enjoy a user-friendly design that makes it easy to navigate the platform and access all features.
+*Streamlined Interface: Enjoy a user-friendly design that makes it easy to navigate the platform and access all features.
 
 How to Use ClubHub
 
-Announcements: Navigate to the Announcements section to view current announcements or create new ones.
+*Announcements: Navigate to the Announcements section to view current announcements or create new ones.
 
-Membership Management: Manage your club's members through the Membership section, where you can add or remove members as needed.
+*Membership Management: Manage your club's members through the Membership section, where you can add or remove members as needed.
 
-Event Scheduling: Organize and schedule club events in the Events section to keep everyone in the loop.
+*Event Scheduling: Organize and schedule club events in the Events section to keep everyone in the loop.
 
-Navigation: Use the menu to explore various sections of the application and access all features.
+*Navigation: Use the menu to explore various sections of the application and access all features.
 
 Technologies Used
 
-Frontend: HTML, CSS
+*Frontend: HTML, CSS
 
-Backend: PHP
+*Backend: PHP
 
-Database: MySQL
+*Database: MySQL
 
 Contributing
 
