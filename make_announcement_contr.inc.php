@@ -1,17 +1,11 @@
 <?php
 declare (strict_types= 1);
 
-function is_input_empty(string $title, string $details, string $eventdate, string $location, int $clubid)
+function is_input_empty(string $title, string $details, string $eventdate, string $location): bool
 {
-    if(empty($title) || empty($details) || empty($eventdate) || empty($location) || empty($clubid))
-    {
-        return true;
-    }
-    else
-    {   
-        return false;
-    }
+    return empty($title) || empty($details) || empty($eventdate) || empty($location);
 }
+
 
 function insert_into_database(object $pdo, string $title, string $details, string $eventdate, string $location, int $clubid) : bool
 {
